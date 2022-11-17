@@ -30,7 +30,7 @@ const initialState: ReviewsState = {
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqPIAkfpbHYYRDhux_ZjF4e1sRXU5llWJbIH0_7qebRoNpdWdJwnqTTWjn423RNeBH3V0&usqp=CAU',
       date: new Date('03.15.2005').toLocaleDateString(),
       tags: ['Films', 'Super Heroes', 'Spider man', 'Some tag', 'Loooooooooooooong tag', 'Iron Man'],
-      folder: 'I am a heck long folder name',
+      folder: 'I am a reaaaaaally long folder name',
       score: 9
     },
     {
@@ -50,7 +50,7 @@ const initialState: ReviewsState = {
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3KTWxI4SfE-1Eb1nAtGpilK3bghEBNc0hJQ&usqp=CAU',
       date: new Date('11.11.2021').toLocaleDateString(),
       tags: ['Films', 'Super Heroes', 'Loooooooooooooong tag'],
-      folder: 'I am a heck long folder name',
+      folder: 'I am a reaaaaaally long folder name',
       score: 5
     },
   ],

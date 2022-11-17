@@ -26,11 +26,12 @@ const MoreButton = () => {
         <MoreVertIcon />
       </IconButton>
       <Menu
-          className='cardEditMenu'
-          open={open}
-          anchorEl={buttonRef.current}
-          onClose={() => setOpen(false)}
-        >
+        disableScrollLock
+        className='cardEditMenu'
+        open={open}
+        anchorEl={buttonRef.current}
+        onClose={() => setOpen(false)}
+      >
         <MenuItem disableRipple>
           <EditIcon />
           Edit

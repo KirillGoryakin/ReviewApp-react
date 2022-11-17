@@ -1,6 +1,8 @@
+import {useState} from 'react';
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const Sorting = () => {
+  const [value, setValue] = useState('');
 
   const selectLabel = 'Sort by';
 
@@ -12,6 +14,8 @@ const Sorting = () => {
         label={selectLabel}
         labelId="sort-by-select-label"
         sx={{ minWidth: 100 }}
+        value={value}
+        onChange={e => setValue(e.target.value)}
       >
         <MenuItem value='newest'>Newest</MenuItem>
         <MenuItem value='oldest'>Oldest</MenuItem>

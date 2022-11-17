@@ -6,7 +6,7 @@ import { TextSearch } from "./TextSearch";
 
 const Search = () => {
   return (
-    <Box sx={{mb: 4}}>
+    <Box sx={{mb: 2}}>
 
       <TextSearch />
 
