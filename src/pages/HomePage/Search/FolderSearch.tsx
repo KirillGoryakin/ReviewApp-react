@@ -2,8 +2,11 @@ import { Button, Menu, MenuItem } from "@mui/material";
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
 import { useRef, useState } from "react";
 import { useAppSelector } from "hooks/app";
+import { useDispatch } from "react-redux";
+import { setSearchFolder } from "store/slices/searchSlice";
 
 const FolderSearch = () => {
+  const dispatch = useDispatch();
   const folders = useAppSelector(state => state.reviews.folders);
   const [open, setOpen] = useState(false);
   const [selectedFolder, setFolder] = useState('');
@@ -14,6 +17,8 @@ const FolderSearch = () => {
   const handleSelect = (folder: string) => {
     setOpen(false);
     setFolder(folder);
+
+    dispatch(setSearchFolder(folder));
   }
 
   return (
@@ -40,7 +45,6 @@ const FolderSearch = () => {
         {selectedFolder ? selectedFolder : 'Select folder'}
       </Button>
       <Menu
-        disableScrollLock
         open={open}
         anchorEl={buttonRef.current}
         onClose={() => setOpen(false)}

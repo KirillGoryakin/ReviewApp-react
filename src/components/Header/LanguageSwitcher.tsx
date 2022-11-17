@@ -17,7 +17,7 @@ const LanguageSwitcher = () => {
         <img src={USFlag} style={{ width: '2rem', height: '2rem' }} />
       </IconButton>
       <Menu
-        disableScrollLock
+        
         open={open}
         anchorEl={buttonRef.current}
         onClose={() => setOpen(false)}

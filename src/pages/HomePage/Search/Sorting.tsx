@@ -10,7 +10,6 @@ const Sorting = () => {
     <FormControl>
       <InputLabel id="sort-by-select-label">{selectLabel}</InputLabel>
       <Select
-        MenuProps={{ disableScrollLock: true }}
         label={selectLabel}
         labelId="sort-by-select-label"
         sx={{ minWidth: 100 }}

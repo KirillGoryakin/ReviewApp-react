@@ -1,36 +1,18 @@
-html {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+* {
   margin: 0;
   padding: 0;
 }
-
-* {
-  outline: none !important;
-}
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 a:hover {
   text-decoration: none;
   color: inherit;
 }
-
 picture {
   display: contents;
 }
-
 ul {
   list-style: none;
   padding: 0;

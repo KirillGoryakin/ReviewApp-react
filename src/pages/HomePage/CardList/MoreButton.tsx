@@ -26,7 +26,6 @@ const MoreButton = () => {
         <MoreVertIcon />
       </IconButton>
       <Menu
-        disableScrollLock
         className='cardEditMenu'
         open={open}
         anchorEl={buttonRef.current}

@@ -1,9 +1,9 @@
 import { Stack } from "@mui/material";
-import { useAppSelector } from "hooks/app";
+import { useFilter } from "hooks/useFilter";
 import { Card } from "./Card";
 
 const CardList = () => {
-  const reviews = useAppSelector(state => state.reviews.reviews);
+  const reviews = useFilter();
 
   return (
     <Stack

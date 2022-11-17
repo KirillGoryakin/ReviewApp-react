@@ -39,7 +39,6 @@ const TagSearch = () => {
         tag
       </Button>
       <Popover
-        disableScrollLock
         open={open}
         anchorEl={buttonRef.current}
         anchorOrigin={{vertical: 'bottom', horizontal: 'left'}}

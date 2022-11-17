@@ -54,7 +54,7 @@ const initialState: ReviewsState = {
       score: 5
     },
   ],
-  folders: ['Watched', 'Watch later', 'Watching', 'Dropped', 'Delayed', 'I am a heck long folder name'],
+  folders: ['All', 'Watched', 'Watch later', 'Watching', 'Dropped', 'Delayed', 'I am a reaaaaaally long folder name'],
   tags: ['Films', 'Super Heroes', 'Spider man', 'Some tag', 'Loooooooooooooong tag', 'Iron Man']
 };
 
