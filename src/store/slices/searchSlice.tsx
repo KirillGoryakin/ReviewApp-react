@@ -1,11 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Folder, Tag } from './reviewsSlice';
-
-type Sort =
-  'newest' | 'oldest'
-  | 'a-to-z' | 'z-to-a'
-  | 'highest-score' | 'lowest-score'
-  | undefined;
+import { Folder, Sort, Tag } from 'appTypes';
 
 export interface SearchState {
   search: string,
@@ -40,6 +34,9 @@ const searchState = createSlice({
     removeSearchTag(state, action: PayloadAction<Tag>) {
       state.tags = state.tags.filter(tag => tag !== action.payload);
     },
+    setSort(state, action: PayloadAction<Sort>) {
+      state.sort = action.payload;
+    },
   },
 });
 
@@ -48,6 +45,7 @@ export const {
   setSearchFolder,
   setSearchTags,
   addSearchTag,
-  removeSearchTag
+  removeSearchTag,
+  setSort,
 } = searchState.actions; 
 export default searchState.reducer;

@@ -1,9 +1,11 @@
 import { Stack } from "@mui/material";
 import { useFilter } from "hooks/useFilter";
+import { useSort } from "hooks/useSort";
 import { Card } from "./Card";
 
 const CardList = () => {
-  const reviews = useFilter();
+  const sort = useSort();
+  const reviews = sort( useFilter() );
 
   return (
     <Stack

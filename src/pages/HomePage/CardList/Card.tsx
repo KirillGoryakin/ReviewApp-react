@@ -7,7 +7,7 @@ import {
   Stack,
   Typography
 } from "@mui/material";
-import { Review } from "store/slices/reviewsSlice";
+import { Review } from "appTypes";
 import { Tag } from "pages/HomePage/CardList/Tag";
 import { MoreButton } from "./MoreButton";
 import { Score } from "./Score";
@@ -16,7 +16,6 @@ type Props = Review;
 
 const Card: React.FC<Props> = (props) => {
   const {
-    id,
     title,
     body,
     imageUrl,
@@ -52,7 +51,7 @@ const Card: React.FC<Props> = (props) => {
             }}
           >
             <img
-              style={{ width: 'inherit', height: 'inherit', objectFit: 'none' }}
+              style={{ width: 'inherit', height: 'inherit', objectFit: 'cover' }}
               src={imageUrl}
             />
           </Box>
@@ -92,7 +91,7 @@ const Card: React.FC<Props> = (props) => {
               fontWeight={500}
               color='text.secondary'
             >
-              {date}
+              {new Date(date).toLocaleDateString()}
             </Typography>
 
           </Box>

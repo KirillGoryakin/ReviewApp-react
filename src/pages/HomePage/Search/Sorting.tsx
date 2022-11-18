@@ -1,8 +1,16 @@
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { useAppDispatch } from 'hooks/app';
+import { setSort } from 'store/slices/searchSlice';
+import { Sort } from 'appTypes';
 
 const Sorting = () => {
   const [value, setValue] = useState('');
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(setSort(value as Sort));
+  }, [value]);
 
   const selectLabel = 'Sort by';
 
