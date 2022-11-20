@@ -44,11 +44,9 @@ const Card: React.FC<Props> = (props) => {
           <Box
             border='2px solid #ebebeb'
             borderRadius='5px'
-            sx={{
-              width: 150,
-              height: 130,
-              flexGrow: 0
-            }}
+            width={150}
+            height={170}
+            flexGrow={0}
           >
             <img
               style={{ width: 'inherit', height: 'inherit', objectFit: 'cover' }}

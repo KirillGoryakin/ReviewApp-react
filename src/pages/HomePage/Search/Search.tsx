@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
-import { FolderSearch } from "./FolderSearch";
+import { FolderSelector } from "components/FolderSelector";
 import { Sorting } from "./Sorting";
-import { TagSearch } from "./TagSearch";
+import { TagSelector } from "../../../components/TagSelector";
 import { TextSearch } from "./TextSearch";
 
 const Search = () => {
@@ -19,8 +19,8 @@ const Search = () => {
           mb: 2
         }}
         >
-        <FolderSearch />
-        <TagSearch />
+        <FolderSelector variant="search" />
+        <TagSelector variant="search" />
       </Box>
 
       <Sorting />

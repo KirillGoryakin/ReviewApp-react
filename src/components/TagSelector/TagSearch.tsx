@@ -12,7 +12,7 @@ const TagSearch = () => {
   const [open, setOpen] = useState(false);
 
   const buttonRef = useRef(null);
-  
+
   return (
     <>
       <Button
@@ -41,7 +41,7 @@ const TagSearch = () => {
       <Popover
         open={open}
         anchorEl={buttonRef.current}
-        anchorOrigin={{vertical: 'bottom', horizontal: 'left'}}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         onClose={() => setOpen(false)}
       >
         <Box
@@ -56,22 +56,22 @@ const TagSearch = () => {
         >
           {
             (searchTags.length < tags.length)
-            ? tags.map(tag =>
-                ( !searchTags.includes(tag) )
+              ? tags.map(tag =>
+                (!searchTags.includes(tag))
                 &&
                 <Tag
                   key={tag}
                   tag={tag}
                 />
               )
-            : <Typography component="p" variant='body1' fontWeight={500} sx={{p: 1}}>
+              : <Typography component="p" variant='body1' fontWeight={500} sx={{ p: 1 }}>
                 No tags :{"("}
               </Typography>
           }
         </Box>
       </Popover>
 
-      {searchTags.map(tag => 
+      {searchTags.map(tag =>
         <TagDeletable
           key={tag}
           tag={tag}

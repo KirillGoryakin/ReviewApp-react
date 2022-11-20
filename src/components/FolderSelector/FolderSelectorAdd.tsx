@@ -4,8 +4,9 @@ import { useRef, useState } from "react";
 import { useAppSelector } from "hooks/app";
 import { useDispatch } from "react-redux";
 import { setSearchFolder } from "store/slices/searchSlice";
+import { AddNewFolderField } from "./AddNewFolderField";
 
-const FolderSearch = () => {
+const FolderSelectorAdd = () => {
   const dispatch = useDispatch();
   const folders = useAppSelector(state => state.reviews.folders);
   const [open, setOpen] = useState(false);
@@ -50,6 +51,7 @@ const FolderSearch = () => {
         onClose={() => setOpen(false)}
         sx={{maxHeight: ITEM_HEIGHT * 6.5}}
       >
+        <AddNewFolderField />
         {folders.map(folder =>
           <MenuItem
             key={folder}
@@ -63,4 +65,4 @@ const FolderSearch = () => {
   )
 }
 
-export { FolderSearch };
+export { FolderSelectorAdd };
