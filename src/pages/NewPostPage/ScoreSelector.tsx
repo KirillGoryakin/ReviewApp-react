@@ -1,7 +1,9 @@
-import { Box, Typography, ClickAwayListener } from "@mui/material";
-import { useRef, useState } from 'react';
+import { Box, Typography, ClickAwayListener, useColorScheme } from "@mui/material";
+import { useContext, useState, useEffect } from 'react';
+import { ReviewContext } from "./NewPostPage";
 
 const ScoreSelector = () => {
+  const [review, setReview] = useContext(ReviewContext);
   const [score, setScore] = useState(10);
   const [edit, setEdit] = useState(false);
 
@@ -9,6 +11,10 @@ const ScoreSelector = () => {
     (score >= 7) ? 'success.light'
     : (score <= 3) ? 'error.dark'
     : 'warning.light';
+
+  useEffect(() => {
+    setReview({...review, score});
+  }, [score]);
 
   return (
     <ClickAwayListener onClickAway={() => setEdit(false)}>

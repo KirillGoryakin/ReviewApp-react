@@ -6,7 +6,10 @@ import {
 } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import { Tag } from "appTypes";
-import { useAppDispatch } from "hooks/app";
+
+type Props = {
+  addTag: (tag: Tag) => void;
+};
 
 const AddNewTagButton = () => {
   return (
@@ -18,12 +21,12 @@ const AddNewTagButton = () => {
   );
 }
 
-const AddNewTagField = () => {
-  const dispatch = useAppDispatch();
+const AddNewTagField: React.FC<Props> = ({ addTag }) => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    // const target = event.target as typeof event.target & { tag: { value: Tag } };
+    const target = event.target as typeof event.target & { tag: { value: Tag } };
+    addTag(target.tag.value);
   }
 
   return (

@@ -1,21 +1,24 @@
+import CancelIcon from '@mui/icons-material/Cancel';
 import { Box, Typography } from "@mui/material";
 import { useAppDispatch } from "hooks/app";
-import { addSearchTag } from "store/slices/searchSlice";
+import { removeSearchTag } from "store/slices/searchSlice";
 
 type Props = {tag: string};
 
-const Tag: React.FC<Props> = ({tag}) => {
+const TagDeletableSearch: React.FC<Props> = ({tag}) => {
   const dispatch = useAppDispatch();
 
   return (
     <Box
-      onClick={() => dispatch(addSearchTag(tag))}
+      display='flex'
+      onClick={() => dispatch(removeSearchTag(tag))}
       border='2px solid rgb(46, 125, 50)'
       borderRadius={1}
       px={1}
       sx={{
         cursor: 'pointer',
         transition: 'background 0.1s ease-in-out',
+        alignItems: 'center',
         ":hover": {
           background: 'rgba(46, 125, 50, 0.1)'
         }
@@ -29,8 +32,9 @@ const Tag: React.FC<Props> = ({tag}) => {
       >
         {tag}
       </Typography>
+      <CancelIcon htmlColor='rgb(46, 125, 50)' sx={{ml: 1}} />
     </Box>
   )
 }
 
-export { Tag };
+export { TagDeletableSearch };

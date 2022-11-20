@@ -1,13 +1,21 @@
 import { Button, Menu, MenuItem } from "@mui/material";
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
-import { useRef, useState } from "react";
-import { useAppDispatch } from "hooks/app";
-import { setSearchFolder } from "store/slices/searchSlice";
+import {
+  useRef,
+  useState,
+  useContext,
+  useEffect
+} from "react";
 import { AddNewFolderField } from "./AddNewFolderField";
 import { useFolders } from "hooks/useFolders";
 
-const FolderSelectorAdd = () => {
-  const dispatch = useAppDispatch();
+type Props = {
+  context: React.Context<any>
+};
+
+const FolderSelectorAdd: React.FC<Props> = ({ context }) => {
+  const [review, setReview] = useContext(context);
+  
   const folders = useFolders();
   const [open, setOpen] = useState(false);
   const [selectedFolder, setFolder] = useState('');
@@ -18,9 +26,11 @@ const FolderSelectorAdd = () => {
   const handleSelect = (folder: string) => {
     setOpen(false);
     setFolder(folder);
-
-    dispatch(setSearchFolder(folder));
   }
+
+  useEffect(() => {
+    setReview({...review, folder: selectedFolder});
+  }, [selectedFolder]);
 
   return (
     <>
@@ -51,7 +61,10 @@ const FolderSelectorAdd = () => {
         onClose={() => setOpen(false)}
         sx={{maxHeight: ITEM_HEIGHT * 6.5}}
       >
-        <AddNewFolderField />
+        <AddNewFolderField
+          setFolder={setFolder}
+          onClose={() => setOpen(false)}
+        />
         {folders.map(folder =>
           <MenuItem
             key={folder}

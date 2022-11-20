@@ -2,9 +2,9 @@ import AddIcon from '@mui/icons-material/Add';
 import { Button, Popover, Box, Typography } from "@mui/material";
 import { useAppSelector } from "hooks/app";
 import { useRef, useState } from "react";
-import { TagDeletable } from './TagDeletable';
-import { Tag } from './Tag';
+import { TagBage } from './TagBage';
 import { useTags } from 'hooks/useTags';
+import { TagDeletable } from './TagDeletable';
 
 const TagSearch = () => {
   const tags = useTags();
@@ -60,8 +60,9 @@ const TagSearch = () => {
               ? tags.map(tag =>
                 (!searchTags.includes(tag))
                 &&
-                <Tag
+                <TagBage
                   key={tag}
+                  variant='search'
                   tag={tag}
                 />
               )
@@ -75,6 +76,7 @@ const TagSearch = () => {
       {searchTags.map(tag =>
         <TagDeletable
           key={tag}
+          variant='search'
           tag={tag}
         />
       )}

@@ -20,7 +20,8 @@ ul {
 }
 
 
-.cardEditMenu li svg{
+.cardEditMenu li svg,
+.imageSelectMenu li svg{
   margin-right: 1rem;
 }
 

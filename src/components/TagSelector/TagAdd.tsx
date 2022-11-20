@@ -1,19 +1,29 @@
 import AddIcon from '@mui/icons-material/Add';
 import { Button, Popover, Box, Typography } from "@mui/material";
-import { useAppSelector } from "hooks/app";
-import { useRef, useState } from "react";
-import { TagDeletable } from './TagDeletable';
-import { Tag } from './Tag';
+import { useRef, useState, useContext, useEffect } from "react";
+import { TagBage } from './TagBage';
 import { AddNewTagField } from './AddNewTagField';
 import { useTags } from 'hooks/useTags';
+import { Tag } from 'appTypes';
+import { TagDeletable } from './TagDeletable';
 
-const TagAdd = () => {
+type Props = {
+  context: React.Context<any>
+};
+
+const TagAdd: React.FC<Props> = ({ context }) => {
+  const [review, setReview] = useContext(context);
   const tags = useTags();
-  const searchTags = useAppSelector(state => state.search.tags);
+  const [includedTags, setIncludedTags] = useState<Tag[]>([]);
 
   const [open, setOpen] = useState(false);
-
   const buttonRef = useRef(null);
+
+  const addTag = (tag: Tag): void => setIncludedTags(includedTags.concat(tag));
+
+  useEffect(() => {
+    setReview({...review, tags: includedTags});
+  }, [includedTags]);
 
   return (
     <>
@@ -57,12 +67,14 @@ const TagAdd = () => {
           }}
         >
           {
-            (searchTags.length < tags.length)
+            (includedTags.length < tags.length)
               ? tags.map(tag =>
-                (!searchTags.includes(tag))
+                (!includedTags.includes(tag))
                 &&
-                <Tag
+                <TagBage
                   key={tag}
+                  variant='add'
+                  onClick={addTag}
                   tag={tag}
                 />
               )
@@ -71,13 +83,15 @@ const TagAdd = () => {
               </Typography>
           }
         </Box>
-        <AddNewTagField />
+        <AddNewTagField addTag={addTag} />
       </Popover>
 
-      {searchTags.map(tag =>
+      {includedTags.map(tag =>
         <TagDeletable
           key={tag}
+          variant='add'
           tag={tag}
+          onClick={(tag) => setIncludedTags(includedTags.filter(el => el !== tag))}
         />
       )}
     </>
