@@ -4,14 +4,10 @@ import testReviews from './testReviews';
 
 export interface ReviewsState {
   reviews: Review[],
-  folders: Folder[],
-  tags: Tag[]
 };
 
 const initialState: ReviewsState = {
-  reviews: testReviews,
-  folders: ['All', 'Watched', 'Watch later', 'Watching', 'Dropped', 'Delayed', 'I am a reaaaaaally long folder name'],
-  tags: ['Films', 'Super Heroes', 'Spider man', 'Some tag', 'Loooooooooooooong tag', 'Iron Man', 'For tests']
+  reviews: testReviews
 };
 
 const reviewsSlice = createSlice({

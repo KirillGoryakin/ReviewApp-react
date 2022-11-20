@@ -4,9 +4,10 @@ import { useAppSelector } from "hooks/app";
 import { useRef, useState } from "react";
 import { TagDeletable } from './TagDeletable';
 import { Tag } from './Tag';
+import { useTags } from 'hooks/useTags';
 
 const TagSearch = () => {
-  const tags = useAppSelector(state => state.reviews.tags);
+  const tags = useTags();
   const searchTags = useAppSelector(state => state.search.tags);
 
   const [open, setOpen] = useState(false);

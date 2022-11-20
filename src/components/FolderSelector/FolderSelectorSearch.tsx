@@ -1,13 +1,13 @@
 import { Button, Menu, MenuItem } from "@mui/material";
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
 import { useRef, useState } from "react";
-import { useAppSelector } from "hooks/app";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "hooks/app";
 import { setSearchFolder } from "store/slices/searchSlice";
+import { useFolders } from "hooks/useFolders";
 
 const FolderSelectorSearch = () => {
-  const dispatch = useDispatch();
-  const folders = useAppSelector(state => state.reviews.folders);
+  const dispatch = useAppDispatch();
+  const folders = useFolders();
   const [open, setOpen] = useState(false);
   const [selectedFolder, setFolder] = useState('');
 
