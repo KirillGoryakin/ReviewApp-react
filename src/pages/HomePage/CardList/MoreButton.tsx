@@ -5,8 +5,11 @@ import EditIcon from '@mui/icons-material/Edit';
 import DriveFileMoveIcon from '@mui/icons-material/DriveFileMove';
 import StarsRoundedIcon from '@mui/icons-material/StarsRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useAppDispatch } from 'hooks/app';
+import { removeReview } from 'store/slices/reviewsSlice';
 
-const MoreButton = () => {
+const MoreButton = ({ id }: {id: number}) => {
+  const dispatch = useAppDispatch();
   const buttonRef = useRef(null);
   const [open, setOpen] = useState(false);
 
@@ -30,6 +33,7 @@ const MoreButton = () => {
         open={open}
         anchorEl={buttonRef.current}
         onClose={() => setOpen(false)}
+        onClick={() => setOpen(false)}
       >
         <MenuItem disableRipple>
           <EditIcon />
@@ -43,7 +47,10 @@ const MoreButton = () => {
           <StarsRoundedIcon />
           Change rating
         </MenuItem>
-        <MenuItem disableRipple>
+        <MenuItem
+          disableRipple
+          onClick={() => dispatch(removeReview(id))}
+        >
           <DeleteIcon />
           Delete
         </MenuItem>

@@ -4,11 +4,17 @@ import { FolderSelector } from "components/FolderSelector";
 import { TagSelector } from "components/TagSelector";
 import { ImageSelector } from "./ImageSelector";
 import { ScoreSelector } from "./ScoreSelector";
+import { ButtonAddReview } from "./ButtonAddReview";
+import { useAppDispatch } from "hooks/app";
+import { addReview } from "store/slices/reviewsSlice";
 
 export const ReviewContext = createContext<any>(null);
 
 const NewPostPage = () => {
-  const [review, setReview] = useState({
+  const dispatch = useAppDispatch();
+  
+  const initialReview = {
+    id: 0,
     title: '',
     body: '',
     imageUrl: '',
@@ -16,10 +22,21 @@ const NewPostPage = () => {
     tags: [],
     folder: '',
     score: 10
-  });
+  };
+
+  const [review, setReview] = useState(initialReview);
+
+  const handleAddReview = () => {
+    dispatch(addReview(review));
+    setReview(initialReview);
+  };
 
   return (
-    <Stack direction='column' spacing={2}>
+    <Box
+      display='flex'
+      flexDirection='column'
+      gap={2}
+    >
       <TextField
         label='Title'
         size='small'
@@ -58,7 +75,9 @@ const NewPostPage = () => {
           </div>
         </Stack>
       </ReviewContext.Provider>
-    </Stack>
+
+      <ButtonAddReview onClick={handleAddReview} />
+    </Box>
   )
 }
 

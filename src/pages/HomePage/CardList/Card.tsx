@@ -16,6 +16,7 @@ type Props = Review;
 
 const Card: React.FC<Props> = (props) => {
   const {
+    id,
     title,
     body,
     imageUrl,
@@ -34,7 +35,7 @@ const Card: React.FC<Props> = (props) => {
       boxShadow='3'
     >
       
-      <MoreButton />
+      <MoreButton id={id} />
 
       <Accordion sx={{width: '100%', boxShadow: 'none'}}>
         <AccordionSummary sx={{position: 'relative'}}>
