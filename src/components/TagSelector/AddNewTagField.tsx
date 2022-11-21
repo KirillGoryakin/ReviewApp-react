@@ -25,8 +25,12 @@ const AddNewTagField: React.FC<Props> = ({ addTag }) => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const target = event.target as typeof event.target & { tag: { value: Tag } };
-    addTag(target.tag.value);
+    const form = event.target as typeof event.target & { tag: { value: Tag } };
+    const input = form.tag;
+    if( input.value.trim().length ) {
+      addTag(input.value.trim());
+      input.value = "";
+    }
   }
 
   return (

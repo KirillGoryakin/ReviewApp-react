@@ -19,7 +19,11 @@ const TagAdd: React.FC<Props> = ({ context }) => {
   const [open, setOpen] = useState(false);
   const buttonRef = useRef(null);
 
-  const addTag = (tag: Tag): void => setIncludedTags(includedTags.concat(tag));
+  const addTag = (tag: Tag): void => {
+    if( !includedTags.includes(tag) ){
+      setIncludedTags(includedTags.concat(tag));
+    }
+  };
 
   useEffect(() => {
     setReview({...review, tags: includedTags});
