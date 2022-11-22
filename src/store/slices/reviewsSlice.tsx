@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Review } from 'appTypes';
+import { Folder, Review } from 'appTypes';
 import testReviews from './testReviews';
 
 export interface ReviewsState {
@@ -21,9 +21,17 @@ const reviewsSlice = createSlice({
     removeReview(state, action: PayloadAction<number>){
       state.reviews = state.reviews.filter(({id}) => id !== action.payload);
       state.reviews = state.reviews.map((review, index) => ({...review, id: index}));
+    },
+    changeReviewFolder(state, action: PayloadAction<{id: number, folder: Folder}>){
+      const review = state.reviews.find(({id}) => id === action.payload.id);
+      if(review) review.folder = action.payload.folder;
     }
   },
 });
 
-export const { addReview, removeReview } = reviewsSlice.actions; 
+export const {
+  addReview,
+  removeReview,
+  changeReviewFolder
+} = reviewsSlice.actions; 
 export default reviewsSlice.reducer;

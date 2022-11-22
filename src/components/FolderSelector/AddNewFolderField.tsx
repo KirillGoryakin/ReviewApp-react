@@ -27,7 +27,7 @@ const AddNewFolderField: React.FC<Props> = ({ setFolder, onClose }) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     const target = event.target as typeof event.target & { folder: { value: Folder } };
-    setFolder(target.folder.value);
+    setFolder(target.folder.value.trim());
     
     onClose();
   }

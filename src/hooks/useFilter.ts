@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "./app";
+import { useAppSelector } from "./app";
 
 export const useFilter = () => {
   const reviews = useAppSelector(state => state.reviews.reviews);

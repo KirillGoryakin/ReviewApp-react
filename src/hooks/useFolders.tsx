@@ -5,7 +5,7 @@ type UseFolders = (filter?: 'defaultFolders' | 'userFolders') => Folder[];
 
 export const useFolders: UseFolders = (filter) => {
   const reviews = useAppSelector(state => state.reviews.reviews);
-  const defaultFolders: Folder[] = ['All', 'Watched', 'Watch later', 'Watching', 'Dropped', 'Delayed'];
+  const defaultFolders: Folder[] = ['Watched', 'Watch later', 'Watching', 'Dropped', 'Delayed'];
 
   if (filter === 'defaultFolders') return defaultFolders;
 

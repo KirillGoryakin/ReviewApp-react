@@ -22,7 +22,7 @@ const SelectorMenu: React.FC<Props> = ({ open, anchorEl, setOpen }) => {
   return (
     <>
       <Menu
-        className='imageSelectMenu'
+        className='menu-icon-spacing'
         open={open}
         onClose={() => setOpen(false)}
         anchorEl={anchorEl}

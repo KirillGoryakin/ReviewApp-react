@@ -41,7 +41,7 @@ const NewPostPage = () => {
         label='Title'
         size='small'
         value={review.title}
-        onChange={(e) => setReview({...review, title: e.target.value})}
+        onChange={(e) => setReview({...review, title: e.target.value.trim()})}
       />
 
       <TextField
@@ -49,7 +49,7 @@ const NewPostPage = () => {
         multiline
         minRows={3}
         value={review.body}
-        onChange={(e) => setReview({ ...review, body: e.target.value })}
+        onChange={(e) => setReview({ ...review, body: e.target.value.trim() })}
       />
 
       <ReviewContext.Provider value={[review, setReview]}>

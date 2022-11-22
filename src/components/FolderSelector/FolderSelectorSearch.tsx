@@ -50,6 +50,10 @@ const FolderSelectorSearch = () => {
         onClose={() => setOpen(false)}
         sx={{maxHeight: ITEM_HEIGHT * 6.5}}
       >
+        <MenuItem onClick={() => handleSelect('All')}>
+          All
+        </MenuItem>
+
         {folders.map(folder =>
           <MenuItem
             key={folder}

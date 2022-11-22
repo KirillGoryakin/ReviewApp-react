@@ -7,11 +7,25 @@ import StarsRoundedIcon from '@mui/icons-material/StarsRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useAppDispatch } from 'hooks/app';
 import { removeReview } from 'store/slices/reviewsSlice';
+import { FolderChanger } from './FolderChanger';
 
 const MoreButton = ({ id }: {id: number}) => {
   const dispatch = useAppDispatch();
+
   const buttonRef = useRef(null);
   const [open, setOpen] = useState(false);
+
+  const folderRef = useRef(null);
+  const [folderOpen, setFolderOpen] = useState(false);
+  const onFolderClose = () => {
+    setFolderOpen(false);
+    setOpen(false);
+  };
+
+  const handleDelete = () => {
+    dispatch(removeReview(id));
+    setOpen(false);
+  }
 
   return (
     <>
@@ -29,17 +43,20 @@ const MoreButton = ({ id }: {id: number}) => {
         <MoreVertIcon />
       </IconButton>
       <Menu
-        className='cardEditMenu'
+        className='menu-icon-spacing'
         open={open}
         anchorEl={buttonRef.current}
         onClose={() => setOpen(false)}
-        onClick={() => setOpen(false)}
       >
         <MenuItem disableRipple>
           <EditIcon />
           Edit
         </MenuItem>
-        <MenuItem disableRipple>
+        <MenuItem
+          ref={folderRef}
+          disableRipple
+          onClick={() => setFolderOpen(true)}
+        >
           <DriveFileMoveIcon />
           Move to folder
         </MenuItem>
@@ -49,12 +66,19 @@ const MoreButton = ({ id }: {id: number}) => {
         </MenuItem>
         <MenuItem
           disableRipple
-          onClick={() => dispatch(removeReview(id))}
+          onClick={handleDelete}
         >
           <DeleteIcon />
           Delete
         </MenuItem>
       </Menu>
+
+      <FolderChanger
+        id={id}
+        anchorEl={folderRef.current}
+        open={folderOpen}
+        onClose={onFolderClose}
+      />
     </>
   )
 }
