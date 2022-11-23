@@ -16,7 +16,16 @@ const reviewsSlice = createSlice({
   reducers: {
     addReview(state, action: PayloadAction<Review>){
       const id = state.reviews.length;
-      state.reviews.push({...action.payload, id});
+      const title = action.payload.title.trim();
+      const body = action.payload.body.trim();
+
+      const review = {
+        ...action.payload,
+        id,
+        title,
+        body
+      };
+      state.reviews.push(review);
     },
     removeReview(state, action: PayloadAction<number>){
       state.reviews = state.reviews.filter(({id}) => id !== action.payload);
