@@ -40,6 +40,7 @@ const ImageSelector = () => {
                 fontSize='2rem'
                 fontWeight={500}
                 lineHeight={1}
+                sx={{ userSelect: 'none' }}
               >
                 Add Image
               </Typography>
