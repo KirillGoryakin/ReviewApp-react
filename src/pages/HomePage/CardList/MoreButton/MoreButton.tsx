@@ -73,12 +73,6 @@ const MoreButton = ({ id }: {id: number}) => {
         </MenuItem>
         <MenuItem
           disableRipple
-        >
-          <StarsRoundedIcon />
-          Change rating
-        </MenuItem>
-        <MenuItem
-          disableRipple
           onClick={() => setConfirmDeleteOpen(true)}
         >
           <DeleteIcon />
