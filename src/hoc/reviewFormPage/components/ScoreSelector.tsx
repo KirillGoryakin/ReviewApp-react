@@ -1,6 +1,6 @@
 import { Box, Typography, ClickAwayListener, useColorScheme } from "@mui/material";
 import { useContext, useState, useEffect } from 'react';
-import { ReviewContext } from "./NewPostPage";
+import { ReviewContext } from "./ReviewFormLayout";
 
 const ScoreSelector = () => {
   const [review, setReview] = useContext(ReviewContext);

@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import { useRef, useState, useContext } from "react";
 import { SelectorMenu } from "./SelectorMenu";
-import { ReviewContext } from "../NewPostPage";
+import { ReviewContext } from "../ReviewFormLayout";
 
 const ImageSelector = () => {
   const [review] = useContext(ReviewContext);

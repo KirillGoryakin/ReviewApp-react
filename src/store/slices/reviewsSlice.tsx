@@ -31,6 +31,13 @@ const reviewsSlice = createSlice({
       state.reviews = state.reviews.filter(({id}) => id !== action.payload);
       state.reviews = state.reviews.map((review, index) => ({...review, id: index}));
     },
+    editReview(state, action: PayloadAction<Review>) {
+      state.reviews = state.reviews.map(review =>
+        (review.id === action.payload.id)
+        ? { ...action.payload }
+        : review
+      );
+    },
     changeReviewFolder(state, action: PayloadAction<{id: number, folder: Folder}>){
       const review = state.reviews.find(({id}) => id === action.payload.id);
       if(review) review.folder = action.payload.folder;
@@ -41,6 +48,7 @@ const reviewsSlice = createSlice({
 export const {
   addReview,
   removeReview,
-  changeReviewFolder
+  editReview,
+  changeReviewFolder,
 } = reviewsSlice.actions; 
 export default reviewsSlice.reducer;

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Menu, TextField } from '@mui/material';
-import { ReviewContext } from '../NewPostPage';
+import { ReviewContext } from '../ReviewFormLayout';
 
 type Props = {
   open: boolean;

@@ -8,9 +8,11 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useAppDispatch } from 'hooks/app';
 import { removeReview } from 'store/slices/reviewsSlice';
 import { FolderChanger } from './FolderChanger';
+import { useNavigate } from 'react-router';
 
 const MoreButton = ({ id }: {id: number}) => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const buttonRef = useRef(null);
   const [open, setOpen] = useState(false);
@@ -48,7 +50,10 @@ const MoreButton = ({ id }: {id: number}) => {
         anchorEl={buttonRef.current}
         onClose={() => setOpen(false)}
       >
-        <MenuItem disableRipple>
+        <MenuItem
+          disableRipple
+          onClick={() => navigate(`/edit/${id}`)}
+        >
           <EditIcon />
           Edit
         </MenuItem>
@@ -60,7 +65,9 @@ const MoreButton = ({ id }: {id: number}) => {
           <DriveFileMoveIcon />
           Move to folder
         </MenuItem>
-        <MenuItem disableRipple>
+        <MenuItem
+          disableRipple
+        >
           <StarsRoundedIcon />
           Change rating
         </MenuItem>

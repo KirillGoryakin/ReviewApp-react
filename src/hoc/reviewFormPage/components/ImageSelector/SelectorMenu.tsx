@@ -4,7 +4,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import SearchIcon from '@mui/icons-material/Search';
 import { EnterURL } from './EnterURL';
 import { SearchByTitle } from './SearchByTitle';
-import { ReviewContext } from '../NewPostPage';
+import { ReviewContext } from '../ReviewFormLayout';
 
 type Props = {
   open: boolean;

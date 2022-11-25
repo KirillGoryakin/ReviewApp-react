@@ -1,36 +1,18 @@
-import { createContext, useState } from "react";
-import { Stack, TextField, Box } from "@mui/material";
+import { createContext } from "react";
+import { Stack, TextField, Box, Button } from "@mui/material";
 import { FolderSelector } from "components/FolderSelector";
 import { TagSelector } from "components/TagSelector";
 import { ImageSelector } from "./ImageSelector";
 import { ScoreSelector } from "./ScoreSelector";
-import { ButtonAddReview } from "./ButtonAddReview";
-import { useAppDispatch } from "hooks/app";
-import { addReview } from "store/slices/reviewsSlice";
 
 export const ReviewContext = createContext<any>(null);
 
-const NewPostPage = () => {
-  const dispatch = useAppDispatch();
-  
-  const initialReview = {
-    id: 0,
-    title: '',
-    body: '',
-    imageUrl: '',
-    date: new Date(Date.now()).toISOString(),
-    tags: [],
-    folder: '',
-    score: 10
-  };
-
-  const [review, setReview] = useState(initialReview);
-
-  const handleAddReview = () => {
-    dispatch(addReview(review));
-    setReview(initialReview);
-  };
-
+const ReviewFormLayout: React.FC<any> = ({
+  review,
+  setReview,
+  handleClick,
+  buttonText
+}) => {
   return (
     <Box
       display='flex'
@@ -41,7 +23,7 @@ const NewPostPage = () => {
         label='Title'
         size='small'
         value={review.title}
-        onChange={(e) => setReview({...review, title: e.target.value})}
+        onChange={(e) => setReview({ ...review, title: e.target.value })}
       />
 
       <TextField
@@ -76,9 +58,20 @@ const NewPostPage = () => {
         </Stack>
       </ReviewContext.Provider>
 
-      <ButtonAddReview onClick={handleAddReview} />
+      <Button
+        onClick={handleClick}
+        variant="contained"
+        sx={{
+          width: 'max-content',
+          fontSize: '1.5rem',
+          px: 8,
+          mx: 'auto'
+        }}
+      >
+        {buttonText}
+      </Button>
     </Box>
   )
 }
 
-export { NewPostPage };
+export { ReviewFormLayout };

@@ -9,7 +9,7 @@ import {
   Button,
   Box
 } from "@mui/material";
-import { ReviewContext } from '../NewPostPage';
+import { ReviewContext } from '../ReviewFormLayout';
 import { Image } from './Image';
 
 type Props = {
@@ -84,7 +84,11 @@ const SearchByTitle: React.FC<Props> = ({ title, open, onClose }) => {
       fullWidth
     >
       <DialogTitle>Search image by title</DialogTitle>
-      <DialogContent sx={{ overflow: 'hidden' }}>
+      <DialogContent sx={{
+        flex: '0 0 auto',
+        overflow: 'hidden',
+        pb: 0
+      }}>
         <Stack
           component='form'
           direction='row'

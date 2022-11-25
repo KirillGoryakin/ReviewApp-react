@@ -26,6 +26,10 @@ const TagAdd: React.FC<Props> = ({ context }) => {
   };
 
   useEffect(() => {
+    setIncludedTags(review.tags);
+  }, []);
+
+  useEffect(() => {
     setReview({...review, tags: includedTags});
   }, [includedTags]);
 
