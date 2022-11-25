@@ -25,7 +25,7 @@ const withAddNewReview =
       date: new Date(Date.now()).toISOString(),
       tags: [],
       folder: '',
-      score: 10
+      score: 0
     };
 
     const [review, setReview] = useState(initialReview);

@@ -4,7 +4,7 @@ import { ReviewContext } from "./ReviewFormLayout";
 
 const ScoreSelector = () => {
   const [review, setReview] = useContext(ReviewContext);
-  const [score, setScore] = useState(10);
+  const [score, setScore] = useState(0);
   const [edit, setEdit] = useState(false);
 
   const color =

@@ -1,13 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Folder, Review } from 'appTypes';
-import testReviews from './testReviews';
+import dummyReviews from 'assets/dummyReviews';
 
 export interface ReviewsState {
+  isNewUser: boolean,
   reviews: Review[],
 };
 
 const initialState: ReviewsState = {
-  reviews: testReviews
+  isNewUser: true,
+  reviews: []
 };
 
 const reviewsSlice = createSlice({
@@ -41,6 +43,11 @@ const reviewsSlice = createSlice({
     changeReviewFolder(state, action: PayloadAction<{id: number, folder: Folder}>){
       const review = state.reviews.find(({id}) => id === action.payload.id);
       if(review) review.folder = action.payload.folder;
+    },
+    newUserDialog(state, action: PayloadAction<boolean>){
+      state.isNewUser = false;
+      if (action.payload)
+        state.reviews = dummyReviews;
     }
   },
 });
@@ -50,5 +57,6 @@ export const {
   removeReview,
   editReview,
   changeReviewFolder,
+  newUserDialog,
 } = reviewsSlice.actions; 
 export default reviewsSlice.reducer;

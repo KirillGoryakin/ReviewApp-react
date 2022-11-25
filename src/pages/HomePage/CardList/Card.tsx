@@ -97,7 +97,7 @@ const Card: React.FC<Props> = (props) => {
         </AccordionSummary>
         <AccordionDetails>
           <Divider />
-          <Typography variant="body1" pt={2}>
+          <Typography variant="body1" pt={2} whiteSpace='pre-wrap'>
             {body}
           </Typography>
         </AccordionDetails>
