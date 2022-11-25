@@ -9,6 +9,7 @@ import { useAppDispatch } from 'hooks/app';
 import { removeReview } from 'store/slices/reviewsSlice';
 import { FolderChanger } from './FolderChanger';
 import { useNavigate } from 'react-router';
+import { ConfirmDelete } from './ConfirmDelete';
 
 const MoreButton = ({ id }: {id: number}) => {
   const dispatch = useAppDispatch();
@@ -16,17 +17,22 @@ const MoreButton = ({ id }: {id: number}) => {
 
   const buttonRef = useRef(null);
   const [open, setOpen] = useState(false);
-
+  
   const folderRef = useRef(null);
   const [folderOpen, setFolderOpen] = useState(false);
   const onFolderClose = () => {
     setFolderOpen(false);
     setOpen(false);
   };
-
+  
+  const [confirmDeleteOpen, setConfirmDeleteOpen] = useState(false);
+  const onConfirmDeleteClose = () => {
+    setConfirmDeleteOpen(false);
+    setOpen(false);
+  };
   const handleDelete = () => {
     dispatch(removeReview(id));
-    setOpen(false);
+    onConfirmDeleteClose();
   }
 
   return (
@@ -73,7 +79,7 @@ const MoreButton = ({ id }: {id: number}) => {
         </MenuItem>
         <MenuItem
           disableRipple
-          onClick={handleDelete}
+          onClick={() => setConfirmDeleteOpen(true)}
         >
           <DeleteIcon />
           Delete
@@ -85,6 +91,11 @@ const MoreButton = ({ id }: {id: number}) => {
         anchorEl={folderRef.current}
         open={folderOpen}
         onClose={onFolderClose}
+      />
+      <ConfirmDelete
+        open={confirmDeleteOpen}
+        onClose={onConfirmDeleteClose}
+        confirm={handleDelete}
       />
     </>
   )
