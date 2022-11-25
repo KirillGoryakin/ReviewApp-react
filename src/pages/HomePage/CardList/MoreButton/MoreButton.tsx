@@ -3,7 +3,6 @@ import { useRef, useState } from 'react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import EditIcon from '@mui/icons-material/Edit';
 import DriveFileMoveIcon from '@mui/icons-material/DriveFileMove';
-import StarsRoundedIcon from '@mui/icons-material/StarsRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useAppDispatch } from 'hooks/app';
 import { removeReview } from 'store/slices/reviewsSlice';
@@ -70,12 +69,6 @@ const MoreButton = ({ id }: {id: number}) => {
         >
           <DriveFileMoveIcon />
           Move to folder
-        </MenuItem>
-        <MenuItem
-          disableRipple
-        >
-          <StarsRoundedIcon />
-          Change rating
         </MenuItem>
         <MenuItem
           disableRipple

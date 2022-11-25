@@ -29,6 +29,10 @@ const FolderSelectorAdd: React.FC<Props> = ({ context }) => {
   }
 
   useEffect(() => {
+    setFolder(review.folder);
+  }, []);
+
+  useEffect(() => {
     setReview({...review, folder: selectedFolder});
   }, [selectedFolder]);
 

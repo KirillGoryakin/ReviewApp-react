@@ -13,6 +13,10 @@ const ScoreSelector = () => {
     : 'warning.light';
 
   useEffect(() => {
+    setScore(review.score);
+  }, []);
+
+  useEffect(() => {
     setReview({...review, score});
   }, [score]);
 
