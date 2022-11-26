@@ -46,6 +46,12 @@ const SelectorMenu: React.FC<Props> = ({ open, anchorEl, setOpen }) => {
           Enter URL
         </MenuItem>
         <MenuItem
+          disabled={
+            (process.env.REACT_APP_API_KEY
+            && process.env.REACT_APP_SEARCH_ENGINE_ID)
+              ? false
+              : true
+          }
           disableRipple
           ref={searchRef}
           onClick={onSearchOpen}
