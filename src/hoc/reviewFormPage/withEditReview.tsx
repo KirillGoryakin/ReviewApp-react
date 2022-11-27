@@ -1,5 +1,6 @@
 import { Review } from "appTypes";
 import { useAppDispatch, useAppSelector } from "hooks/app";
+import { useTranslate } from "hooks/useTranslate";
 import { useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router";
 import { editReview } from "store/slices/reviewsSlice";
@@ -14,6 +15,8 @@ type InjectedProps = {
 const withEditReview =
   <P extends InjectedProps>(Component: React.ComponentType<P>) => {
     return (props: P) => {
+      const { __ } = useTranslate();
+      
       const dispatch = useAppDispatch();
       const navigate = useNavigate();
       const { id } = useParams();
@@ -39,7 +42,7 @@ const withEditReview =
           review={review}
           setReview={setReview}
           handleClick={handleClick}
-          buttonText='Confirm'
+          buttonText={__("editReviewPage.button")}
         />
       );
     }

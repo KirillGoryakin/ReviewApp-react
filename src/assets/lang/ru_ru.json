@@ -1,0 +1,69 @@
+{
+  "name": "Русский",
+  "code": "ru_ru",
+
+  "header.home": "Главная",
+  "header.about": "О проекте",
+  "header.addNew": "Добавить",
+
+  "folderSelector.addNewFolderField.label": "Новая папка",
+  "folderSelector.label": "Выбрать папку",
+  "folderSelector.all": "Всё",
+
+  "tagSelector.addNewTagField.label": "Новый тег",
+  "tagSelector.label": "тег",
+
+  "tagSelector.empty": "Тегов нет :(",
+  "imageSelector.label": "Добавить Картинку",
+  "imageSelector.searchByTitle.title": "Найти картинку по названию",
+
+  "imageSelector.searchByTitle.inputLabel": "Поиск",
+  "imageSelector.searchByTitle.showMore": "Больше...",
+  "imageSelector.menu.searchByTitle": "Найти по названию",
+  "imageSelector.menu.enterURL": "Ввести URL",
+
+  "addReviewPage.title": "Название",
+  "addReviewPage.description": "Описание",
+  "addReviewPage.button": "Добавить рецензию",
+
+  "editReviewPage.button": "Подтвердить",
+
+  "folder.watched": "Просмотрено",
+  "folder.watchLater": "Смотреть позже",
+  "folder.watching": "Смотрю",
+  "folder.dropped": "Брошено",
+  "folder.delayed": "Отложено",
+
+  "homePage.confirmDelete.title": "Вы уверены?",
+  "homePage.confirmDelete.text": "Вы действительно хотите удалить эту рецензию?\nЭтот процесс нельзя будет отменить.",
+  "homePage.confirmDelete.buttonDelete": "Удалить",
+  "homePage.confirmDelete.buttonCancel": "Отмена",
+
+  "homePage.moreButton.menu.edit": "Изменить",
+  "homePage.moreButton.menu.moveToFolder": "Переместить в папку",
+  "homePage.moreButton.menu.delete": "Удалить",
+
+  "homePage.cardList.empty": "У вас пока нет никаких рецензий.",
+
+  "homePage.clearFilters.button": "Очистить Фильтры",
+
+  "homePage.sort.label": "Сортировать",
+  "homePage.sort.newest": "Самые новые",
+  "homePage.sort.oldest": "Самые старые",
+  "homePage.sort.a-to-z": "От А до Я",
+  "homePage.sort.z-to-a": "От Я до А",
+  "homePage.sort.highestScore": "Высокий балл",
+  "homePage.sort.lowestScore": "Низкий балл",
+
+  "homePage.textSearch.input": "Поиск...",
+  "homePage.textSearch.button": "Найти",
+
+  "homePage.newUserDialog.title": "Добро пожаловать!",
+  "homePage.newUserDialog.text": "Похоже, что вы новый пользователь.\nЕсли вы просто хотите протестировать моё приложение, то я предлагаю вам добавить несколько тестовых рецензий.",
+  "homePage.newUserDialog.button.add": "Добавить",
+  "homePage.newUserDialog.button.no": "Нет, спасибо",
+
+  "notFoundPage.404": "404",
+  "notFoundPage.text": "Страница не найдена",
+  "notFoundPage.buttonHome": "На Главную"
+}

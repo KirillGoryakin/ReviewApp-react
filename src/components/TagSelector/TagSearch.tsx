@@ -5,8 +5,11 @@ import { TagBage } from './TagBage';
 import { useTags } from 'hooks/useTags';
 import { TagDeletable } from './TagDeletable';
 import { useFilter } from 'hooks/useFilter';
+import { useTranslate } from 'hooks/useTranslate';
 
 const TagSearch = () => {
+  const { __ } = useTranslate();
+  
   const tags = useTags();
   const { filterParams } = useFilter();
   const searchTags = filterParams.tags;
@@ -38,7 +41,7 @@ const TagSearch = () => {
           }
         }}
       >
-        tag
+        {__("tagSelector.label")}
       </Button>
       <Popover
         open={open}
@@ -68,7 +71,7 @@ const TagSearch = () => {
                 />
               )
               : <Typography component="p" variant='body1' fontWeight={500} sx={{ p: 1 }}>
-                No tags :{"("}
+                {__("tagSelector.empty")}
               </Typography>
           }
         </Box>

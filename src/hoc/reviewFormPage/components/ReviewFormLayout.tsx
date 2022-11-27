@@ -4,6 +4,7 @@ import { FolderSelector } from "components/FolderSelector";
 import { TagSelector } from "components/TagSelector";
 import { ImageSelector } from "./ImageSelector";
 import { ScoreSelector } from "./ScoreSelector";
+import { useTranslate } from "hooks/useTranslate";
 
 export const ReviewContext = createContext<any>(null);
 
@@ -13,6 +14,8 @@ const ReviewFormLayout: React.FC<any> = ({
   handleClick,
   buttonText
 }) => {
+  const { __ } = useTranslate();
+
   return (
     <Box
       display='flex'
@@ -20,14 +23,14 @@ const ReviewFormLayout: React.FC<any> = ({
       gap={2}
     >
       <TextField
-        label='Title'
+        label={__("addReviewPage.title")}
         size='small'
         value={review.title}
         onChange={(e) => setReview({ ...review, title: e.target.value })}
       />
 
       <TextField
-        label='Description'
+        label={__("addReviewPage.description")}
         multiline
         minRows={3}
         value={review.body}

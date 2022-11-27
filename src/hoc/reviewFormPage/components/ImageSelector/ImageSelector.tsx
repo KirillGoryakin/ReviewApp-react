@@ -3,8 +3,11 @@ import AddIcon from '@mui/icons-material/Add';
 import { useRef, useState, useContext } from "react";
 import { SelectorMenu } from "./SelectorMenu";
 import { ReviewContext } from "../ReviewFormLayout";
+import { useTranslate } from "hooks/useTranslate";
 
 const ImageSelector = () => {
+  const { __ } = useTranslate();
+  
   const [review] = useContext(ReviewContext);
   const buttonRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,7 +45,7 @@ const ImageSelector = () => {
                 lineHeight={1}
                 sx={{ userSelect: 'none' }}
               >
-                Add Image
+                {__("imageSelector.label")}
               </Typography>
             </>
           : <img

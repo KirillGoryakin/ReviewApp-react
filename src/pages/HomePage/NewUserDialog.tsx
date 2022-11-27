@@ -7,9 +7,11 @@ import {
   DialogTitle
 } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "hooks/app";
+import { useTranslate } from "hooks/useTranslate";
 import { newUserDialog } from "store/slices/reviewsSlice";
 
 const NewUserDialog = () => {
+  const { __ } = useTranslate();
   const dispatch = useAppDispatch();
   const isNewUser = useAppSelector(state => state.reviews.isNewUser);
 
@@ -18,11 +20,10 @@ const NewUserDialog = () => {
       open={isNewUser}
       maxWidth='xs'
     >
-      <DialogTitle>Welcome!</DialogTitle>
+      <DialogTitle>{__("homePage.newUserDialog.title")}</DialogTitle>
       <DialogContent>
-        <DialogContentText>
-          Seems like you are a new user here.<br />
-          If you just want to test my app, I propose you to add some dummy reviews. 
+        <DialogContentText style={{whiteSpace: 'pre-wrap'}}>
+          {__("homePage.newUserDialog.text")}
         </DialogContentText>
       </DialogContent>
       <DialogActions>
@@ -31,13 +32,13 @@ const NewUserDialog = () => {
           variant='contained'
           color='success'
         >
-          Add
+          {__("homePage.newUserDialog.button.add")}
         </Button>
         <Button
           onClick={() => dispatch(newUserDialog(false))}
           variant='text'
         >
-          No, thanks
+          {__("homePage.newUserDialog.button.no")}
         </Button>
       </DialogActions>
     </Dialog>

@@ -9,8 +9,10 @@ import { removeReview } from 'store/slices/reviewsSlice';
 import { FolderChanger } from './FolderChanger';
 import { useNavigate } from 'react-router';
 import { ConfirmDelete } from './ConfirmDelete';
+import { useTranslate } from 'hooks/useTranslate';
 
 const MoreButton = ({ id }: {id: number}) => {
+  const { __ } = useTranslate();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -60,7 +62,7 @@ const MoreButton = ({ id }: {id: number}) => {
           onClick={() => navigate(`/edit/${id}`)}
         >
           <EditIcon />
-          Edit
+          {__("homePage.moreButton.menu.edit")}
         </MenuItem>
         <MenuItem
           ref={folderRef}
@@ -68,14 +70,14 @@ const MoreButton = ({ id }: {id: number}) => {
           onClick={() => setFolderOpen(true)}
         >
           <DriveFileMoveIcon />
-          Move to folder
+          {__("homePage.moreButton.menu.moveToFolder")}
         </MenuItem>
         <MenuItem
           disableRipple
           onClick={() => setConfirmDeleteOpen(true)}
         >
           <DeleteIcon />
-          Delete
+          {__("homePage.moreButton.menu.delete")}
         </MenuItem>
       </Menu>
 

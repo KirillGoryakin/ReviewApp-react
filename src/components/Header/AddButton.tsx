@@ -1,8 +1,10 @@
 import AddIcon from '@mui/icons-material/Add';
 import { Button } from "@mui/material";
+import { useTranslate } from 'hooks/useTranslate';
 import { useNavigate } from "react-router";
 
 const AddButton = () => {
+  const { __ } = useTranslate();
   const navigate = useNavigate();
   
   return (
@@ -23,7 +25,7 @@ const AddButton = () => {
         }
       }}
     >
-      Add New
+      {__("header.addNew")}
     </Button>
   )
 }

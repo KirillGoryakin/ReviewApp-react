@@ -6,6 +6,7 @@ import {
 } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import { Folder } from "appTypes";
+import { useTranslate } from "hooks/useTranslate";
 
 type Props = {
   setFolder: React.Dispatch<React.SetStateAction<string>>;
@@ -23,6 +24,7 @@ const AddNewFolderButton = () => {
 }
 
 const AddNewFolderField: React.FC<Props> = ({ setFolder, onClose }) => {
+  const { __ } = useTranslate();
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -39,7 +41,7 @@ const AddNewFolderField: React.FC<Props> = ({ setFolder, onClose }) => {
           onKeyDown={(e) => e.stopPropagation()}
           name='folder'
           size='small'
-          label='A New Folder'
+          label={__("folderSelector.addNewFolderField.label")}
           InputProps={{
             endAdornment: <AddNewFolderButton />,
             sx: { pr: 1 }

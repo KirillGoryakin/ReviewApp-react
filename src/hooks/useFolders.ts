@@ -1,11 +1,20 @@
 import { Folder } from "appTypes";
 import { useAppSelector } from "./app";
+import { useTranslate } from "./useTranslate";
 
 type UseFolders = (filter?: 'defaultFolders' | 'userFolders') => Folder[];
 
 export const useFolders: UseFolders = (filter) => {
+  const { __ } = useTranslate();
+  
   const reviews = useAppSelector(state => state.reviews.reviews);
-  const defaultFolders: Folder[] = ['Watched', 'Watch later', 'Watching', 'Dropped', 'Delayed'];
+  const defaultFolders: Folder[] = [
+    __("folder.watched"),
+    __("folder.watchLater"),
+    __("folder.watching"),
+    __("folder.dropped"),
+    __("folder.delayed")
+  ];
 
   if (filter === 'defaultFolders') return defaultFolders;
 

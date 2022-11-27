@@ -4,11 +4,13 @@ import dummyReviews from 'assets/dummyReviews';
 
 export interface ReviewsState {
   isNewUser: boolean,
+  lang: string,
   reviews: Review[],
 };
 
 const initialState: ReviewsState = {
   isNewUser: true,
+  lang: navigator.language.replace('-', '_').toLowerCase() || "en_us",
   reviews: []
 };
 
@@ -48,6 +50,9 @@ const reviewsSlice = createSlice({
       state.isNewUser = false;
       if (action.payload)
         state.reviews = dummyReviews;
+    },
+    changeLanguage(state, action: PayloadAction<string>) {
+      state.lang = action.payload;
     }
   },
 });
@@ -58,5 +63,6 @@ export const {
   editReview,
   changeReviewFolder,
   newUserDialog,
+  changeLanguage,
 } = reviewsSlice.actions; 
 export default reviewsSlice.reducer;

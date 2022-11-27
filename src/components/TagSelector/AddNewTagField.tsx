@@ -6,6 +6,7 @@ import {
 } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import { Tag } from "appTypes";
+import { useTranslate } from "hooks/useTranslate";
 
 type Props = {
   addTag: (tag: Tag) => void;
@@ -22,6 +23,7 @@ const AddNewTagButton = () => {
 }
 
 const AddNewTagField: React.FC<Props> = ({ addTag }) => {
+  const { __ } = useTranslate();
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -41,7 +43,7 @@ const AddNewTagField: React.FC<Props> = ({ addTag }) => {
         <TextField
           name='tag'
           size='small'
-          label='A New Tag'
+          label={__("tagSelector.addNewTagField.label")}
           InputProps={{
             endAdornment: <AddNewTagButton />,
             sx: { pr: 1 }

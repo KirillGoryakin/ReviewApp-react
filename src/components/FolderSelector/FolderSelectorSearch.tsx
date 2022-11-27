@@ -3,8 +3,11 @@ import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
 import { useEffect, useRef, useState } from "react";
 import { useFolders } from "hooks/useFolders";
 import { useFilter } from "hooks/useFilter";
+import { useTranslate } from "hooks/useTranslate";
 
 const FolderSelectorSearch = () => {
+  const { __ } = useTranslate();
+  
   const { filterParams, setFilterParams } = useFilter();
   const folders = useFolders();
   const [selectedFolder, setFolder] = useState('');
@@ -48,7 +51,7 @@ const FolderSelectorSearch = () => {
           }
         }}
       >
-        {selectedFolder ? selectedFolder : 'Select folder'}
+        {selectedFolder ? selectedFolder : __("folderSelector.label")}
       </Button>
       <Menu
         open={open}
@@ -57,7 +60,7 @@ const FolderSelectorSearch = () => {
         sx={{maxHeight: ITEM_HEIGHT * 6.5}}
       >
         <MenuItem onClick={() => handleSelect('All')}>
-          All
+          {__("folderSelector.all")}
         </MenuItem>
 
         {folders.map(folder =>

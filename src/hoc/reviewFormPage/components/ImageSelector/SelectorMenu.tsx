@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { EnterURL } from './EnterURL';
 import { SearchByTitle } from './SearchByTitle';
 import { ReviewContext } from '../ReviewFormLayout';
+import { useTranslate } from 'hooks/useTranslate';
 
 type Props = {
   open: boolean;
@@ -13,6 +14,8 @@ type Props = {
 };
 
 const SelectorMenu: React.FC<Props> = ({ open, anchorEl, setOpen }) => {
+  const { __ } = useTranslate();
+  
   const [review] = useContext(ReviewContext);
   const [openURL, setOpenURL] = useState(false);
   const enterURLRef = useRef(null);
@@ -43,7 +46,7 @@ const SelectorMenu: React.FC<Props> = ({ open, anchorEl, setOpen }) => {
           onClick={() => setOpenURL(true)}
         >
           <LinkIcon />
-          Enter URL
+          {__("imageSelector.menu.enterURL")}
         </MenuItem>
         <MenuItem
           disabled={
@@ -57,7 +60,7 @@ const SelectorMenu: React.FC<Props> = ({ open, anchorEl, setOpen }) => {
           onClick={onSearchOpen}
         >
           <SearchIcon />
-          Search by title
+          {__("imageSelector.menu.searchByTitle")}
         </MenuItem>
       </Menu>
 

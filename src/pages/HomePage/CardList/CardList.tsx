@@ -2,9 +2,12 @@ import { Stack, Typography } from "@mui/material";
 import { useAppSelector } from "hooks/app";
 import { useFilter } from "hooks/useFilter";
 import { useSort } from "hooks/useSort";
+import { useTranslate } from "hooks/useTranslate";
 import { Card } from "./Card";
 
 const CardList = () => {
+  const { __ } = useTranslate();
+  
   const reviews = useAppSelector(state => state.reviews.reviews);
   const { filter } = useFilter();
   const { sort } = useSort();
@@ -32,7 +35,7 @@ const CardList = () => {
           color='grey.400'
           mt={8}
         >
-          You have no any reviews yet.
+          {__("homePage.cardList.empty")}
         </Typography>
       }
     </Stack>

@@ -1,0 +1,68 @@
+{
+  "name": "English",
+  "code": "en_us",
+
+  "header.home": "Home",
+  "header.about": "About this Project",
+  "header.addNew": "Add New",
+
+  "folderSelector.addNewFolderField.label": "A New Folder",
+  "folderSelector.label": "Select folder",
+  "folderSelector.all": "All",
+
+  "tagSelector.addNewTagField.label": "A New Tag",
+  "tagSelector.label": "tag",
+  "tagSelector.empty": "No tags :(",
+
+  "imageSelector.label": "Add Image",
+  "imageSelector.searchByTitle.title": "Search image by title",
+  "imageSelector.searchByTitle.inputLabel": "Search",
+  "imageSelector.searchByTitle.showMore": "Show More...",
+  "imageSelector.menu.searchByTitle": "Search by title",
+  "imageSelector.menu.enterURL": "Enter URL",
+
+  "addReviewPage.title": "Title",
+  "addReviewPage.description": "Description",
+  "addReviewPage.button": "Add Review",
+
+  "editReviewPage.button": "Confirm",
+
+  "folder.watched": "Watched",
+  "folder.watchLater": "Watch later",
+  "folder.watching": "Watching",
+  "folder.dropped": "Dropped",
+  "folder.delayed": "Delayed",
+
+  "homePage.confirmDelete.title": "Are you sure?",
+  "homePage.confirmDelete.text": "Do you really want to delete this review? \nThis procces cannot be undone.",
+  "homePage.confirmDelete.buttonDelete": "Delete",
+  "homePage.confirmDelete.buttonCancel": "Cancel",
+
+  "homePage.moreButton.menu.edit": "Edit",
+  "homePage.moreButton.menu.moveToFolder": "Move to folder",
+  "homePage.moreButton.menu.delete": "Delete",
+
+  "homePage.cardList.empty": "You have no any reviews yet.",
+
+  "homePage.clearFilters.button": "Clear Filters",
+
+  "homePage.sort.label": "Sort by",
+  "homePage.sort.newest": "Newest",
+  "homePage.sort.oldest": "Oldest",
+  "homePage.sort.a-to-z": "A to Z",
+  "homePage.sort.z-to-a": "Z to A",
+  "homePage.sort.highestScore": "Highest score",
+  "homePage.sort.lowestScore": "Lowest score",
+
+  "homePage.textSearch.input": "Search...",
+  "homePage.textSearch.button": "Search",
+
+  "homePage.newUserDialog.title": "Welcome!",
+  "homePage.newUserDialog.text": "Seems like you are a new user here.\nIf you just want to test my app, I propose you to add some dummy reviews.",
+  "homePage.newUserDialog.button.add": "Add",
+  "homePage.newUserDialog.button.no": "No, thanks",
+
+  "notFoundPage.404": "404",
+  "notFoundPage.text": "Page not found",
+  "notFoundPage.buttonHome": "Home Page"
+}

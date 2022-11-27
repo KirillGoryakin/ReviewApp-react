@@ -12,6 +12,7 @@ import {
 import { ReviewContext } from '../ReviewFormLayout';
 import { Image } from './Image';
 import SearchedByTitleImage from 'assets/img/powered_by_google.png';
+import { useTranslate } from 'hooks/useTranslate';
 
 type Props = {
   title: string;
@@ -20,6 +21,8 @@ type Props = {
 };
 
 const SearchByTitle: React.FC<Props> = ({ title, open, onClose }) => {
+  const { __ } = useTranslate();
+  
   const [review, setReview] = useContext(ReviewContext);
   const [searchTitle, setSearchTitle] = useState('');
   const [startFrom, setStartFrom] = useState(1);
@@ -89,7 +92,7 @@ const SearchByTitle: React.FC<Props> = ({ title, open, onClose }) => {
         justifyContent='space-between'
         alignItems='center'
       >
-        Search image by title
+        {__("imageSelector.searchByTitle.title")}
         <img
           src={SearchedByTitleImage}
           style={{
@@ -122,7 +125,7 @@ const SearchByTitle: React.FC<Props> = ({ title, open, onClose }) => {
             sx={{ flexGrow: 1 }}
             type='submit'
           >
-            Search
+            {__("imageSelector.searchByTitle.inputLabel")}
           </Button>
         </Stack>
       </DialogContent>
@@ -152,7 +155,7 @@ const SearchByTitle: React.FC<Props> = ({ title, open, onClose }) => {
               size='large'
               onClick={showMore}
             >
-              Show More...
+              {__("imageSelector.searchByTitle.showMore")}
             </Button>
           </Box>
         }

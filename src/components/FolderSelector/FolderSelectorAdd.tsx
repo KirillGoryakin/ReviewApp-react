@@ -8,12 +8,15 @@ import {
 } from "react";
 import { AddNewFolderField } from "./AddNewFolderField";
 import { useFolders } from "hooks/useFolders";
+import { useTranslate } from "hooks/useTranslate";
 
 type Props = {
   context: React.Context<any>
 };
 
 const FolderSelectorAdd: React.FC<Props> = ({ context }) => {
+  const { __ } = useTranslate();
+  
   const [review, setReview] = useContext(context);
   
   const folders = useFolders();
@@ -57,7 +60,7 @@ const FolderSelectorAdd: React.FC<Props> = ({ context }) => {
           }
         }}
       >
-        {selectedFolder ? selectedFolder : 'Select folder'}
+        {selectedFolder ? selectedFolder : __("folderSelector.label")}
       </Button>
       <Menu
         open={open}

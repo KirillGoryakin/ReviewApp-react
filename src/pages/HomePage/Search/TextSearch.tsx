@@ -1,8 +1,10 @@
 import { Button, Stack, TextField } from "@mui/material";
 import { useFilter } from "hooks/useFilter";
+import { useTranslate } from "hooks/useTranslate";
 import { useState, useEffect } from "react";
 
 const TextSearch = () => {
+  const { __ } = useTranslate();
   const { filterParams, setFilterParams } = useFilter();
   const [value, setValue] = useState('');
 
@@ -25,7 +27,7 @@ const TextSearch = () => {
     >
       <TextField
         name='text'
-        label='Search...'
+        label={__("homePage.textSearch.input")}
         size='small'
         onFocus={(e) => e.target.select()}
         sx={{ flexGrow: 16 }}
@@ -37,7 +39,7 @@ const TextSearch = () => {
         sx={{ flexGrow: 1 }}
         type='submit'
       >
-        Search
+        {__("homePage.textSearch.button")}
       </Button>
     </Stack>
   )

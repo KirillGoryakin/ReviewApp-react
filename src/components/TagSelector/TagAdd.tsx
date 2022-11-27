@@ -6,12 +6,15 @@ import { AddNewTagField } from './AddNewTagField';
 import { useTags } from 'hooks/useTags';
 import { Tag } from 'appTypes';
 import { TagDeletable } from './TagDeletable';
+import { useTranslate } from 'hooks/useTranslate';
 
 type Props = {
   context: React.Context<any>
 };
 
 const TagAdd: React.FC<Props> = ({ context }) => {
+  const { __ } = useTranslate();
+  
   const [review, setReview] = useContext(context);
   const tags = useTags();
   const [includedTags, setIncludedTags] = useState<Tag[]>([]);
@@ -56,7 +59,7 @@ const TagAdd: React.FC<Props> = ({ context }) => {
           }
         }}
       >
-        tag
+        {__("tagSelector.label")}
       </Button>
       <Popover
         open={open}
@@ -87,7 +90,7 @@ const TagAdd: React.FC<Props> = ({ context }) => {
                 />
               )
               : <Typography component="p" variant='body1' fontWeight={500} sx={{ p: 1 }}>
-                No tags :{"("}
+                {__("tagSelector.empty")}
               </Typography>
           }
         </Box>

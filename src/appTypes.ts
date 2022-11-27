@@ -18,3 +18,9 @@ export type Sort =
   | 'a-to-z' | 'z-to-a'
   | 'highest-score' | 'lowest-score'
   | undefined;
+
+export interface Language {
+  name: string;
+  code: string;
+  [key: string]: string;
+};

@@ -6,6 +6,7 @@ import {
   DialogTitle,
   Button
 } from "@mui/material";
+import { useTranslate } from "hooks/useTranslate";
 
 type Props = {
   open: boolean;
@@ -14,17 +15,18 @@ type Props = {
 };
 
 const ConfirmDelete: React.FC<Props> = ({ open, onClose, confirm }) => {
+  const { __ } = useTranslate();
+  
   return (
     <Dialog
       open={open}
       onClose={onClose}
       maxWidth='xs'
     >
-      <DialogTitle>Are you sure?</DialogTitle>
+      <DialogTitle>{__("homePage.confirmDelete.title")}</DialogTitle>
       <DialogContent>
-        <DialogContentText>
-          Do you really want to delete this review?<br />
-          This procces cannot be undone.
+        <DialogContentText style={{whiteSpace: 'pre-wrap'}}>
+          {__("homePage.confirmDelete.text")}
         </DialogContentText>
       </DialogContent>
       <DialogActions>
@@ -34,13 +36,13 @@ const ConfirmDelete: React.FC<Props> = ({ open, onClose, confirm }) => {
           color='error'
           autoFocus
         >
-          Delete
+          {__("homePage.confirmDelete.buttonDelete")}
         </Button>
         <Button
           onClick={onClose}
           variant='outlined'
         >
-          Cancel
+          {__("homePage.confirmDelete.buttonCancel")}
         </Button>
       </DialogActions>
     </Dialog>
