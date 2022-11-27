@@ -1,8 +1,16 @@
-import { Review } from "appTypes";
-import { useAppSelector } from "./app";
+import { Review, Sort } from "appTypes";
+import { useSearchParams } from "react-router-dom";
 
-export const useSort = () => {
-  const sortMode = useAppSelector(state => state.search.sort);
+type UseSort = () => {
+  sort: (reviews: Review[]) => Review[];
+  sortMode: Sort;
+  setSortMode: (sortMode: Sort) => void; 
+};
+
+export const useSort: UseSort = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const sortMode = searchParams.get('sort') as Sort || undefined;
 
   const sort = (reviews: Review[]): Review[] => {
     const sorted = [...reviews];
@@ -66,5 +74,15 @@ export const useSort = () => {
     return sorted;
   }
 
-  return sort;
+  const setSortMode = (sortMode: Sort) => {
+    if(!sortMode){
+      searchParams.delete('sort');
+    } else {
+      searchParams.set('sort', sortMode);
+    }
+    
+    setSearchParams(searchParams);
+  }
+
+  return { sort, sortMode, setSortMode };
 }

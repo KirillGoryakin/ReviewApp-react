@@ -3,6 +3,7 @@ import { FolderSelector } from "components/FolderSelector";
 import { Sorting } from "./Sorting";
 import { TagSelector } from "../../../components/TagSelector";
 import { TextSearch } from "./TextSearch";
+import { ClearFilters } from "./ClearFilters";
 
 const Search = () => {
   return (
@@ -23,7 +24,14 @@ const Search = () => {
         <TagSelector variant="search" />
       </Box>
 
-      <Sorting />
+      <Box
+        display='flex'
+        justifyContent='space-between'
+        alignItems='center'
+      >
+        <Sorting />
+        <ClearFilters />
+      </Box>
 
     </Box>
   )

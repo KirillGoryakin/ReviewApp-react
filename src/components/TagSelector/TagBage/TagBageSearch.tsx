@@ -1,15 +1,20 @@
 import { Box, Typography } from "@mui/material";
-import { useAppDispatch } from "hooks/app";
-import { addSearchTag } from "store/slices/searchSlice";
+import { useFilter } from "hooks/useFilter";
 
 type Props = {tag: string};
 
 const TagBageSearch: React.FC<Props> = ({tag}) => {
-  const dispatch = useAppDispatch();
+  const { filterParams, setFilterParams } = useFilter();
+
+  const handleClick = () => {
+    setFilterParams(
+      params => ({ ...params, tags: filterParams.tags.concat(tag)})
+    );
+  }
 
   return (
     <Box
-      onClick={() => dispatch(addSearchTag(tag))}
+      onClick={handleClick}
       border='2px solid rgb(46, 125, 50)'
       borderRadius={1}
       px={1}

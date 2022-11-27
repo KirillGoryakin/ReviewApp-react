@@ -1,14 +1,15 @@
 import AddIcon from '@mui/icons-material/Add';
 import { Button, Popover, Box, Typography } from "@mui/material";
-import { useAppSelector } from "hooks/app";
 import { useRef, useState } from "react";
 import { TagBage } from './TagBage';
 import { useTags } from 'hooks/useTags';
 import { TagDeletable } from './TagDeletable';
+import { useFilter } from 'hooks/useFilter';
 
 const TagSearch = () => {
   const tags = useTags();
-  const searchTags = useAppSelector(state => state.search.tags);
+  const { filterParams } = useFilter();
+  const searchTags = filterParams.tags;
 
   const [open, setOpen] = useState(false);
 

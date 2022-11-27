@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { ReviewContext } from '../ReviewFormLayout';
 import { Image } from './Image';
+import SearchedByTitleImage from 'assets/img/powered_by_google.png';
 
 type Props = {
   title: string;
@@ -83,7 +84,19 @@ const SearchByTitle: React.FC<Props> = ({ title, open, onClose }) => {
       maxWidth='lg'
       fullWidth
     >
-      <DialogTitle>Search image by title</DialogTitle>
+      <DialogTitle
+        display='flex'
+        justifyContent='space-between'
+        alignItems='center'
+      >
+        Search image by title
+        <img
+          src={SearchedByTitleImage}
+          style={{
+            marginLeft: 'auto'
+          }}
+        />
+      </DialogTitle>
       <DialogContent sx={{
         flex: '0 0 auto',
         overflow: 'hidden',

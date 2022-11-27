@@ -1,10 +1,5 @@
-declare module "*.svg" {
-  const content: any;
-  export default content;
-}
-declare module "*.gif" {
-  const content: any;
-  export default content;
-}
+declare module "*.svg";
+declare module "*.gif";
+declare module "*.png";
 
 declare module 'redux-persist/lib/storage';

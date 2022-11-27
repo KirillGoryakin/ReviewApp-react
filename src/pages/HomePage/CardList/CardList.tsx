@@ -1,11 +1,15 @@
 import { Stack, Typography } from "@mui/material";
+import { useAppSelector } from "hooks/app";
 import { useFilter } from "hooks/useFilter";
 import { useSort } from "hooks/useSort";
 import { Card } from "./Card";
 
 const CardList = () => {
-  const sort = useSort();
-  const reviews = sort( useFilter() );
+  const reviews = useAppSelector(state => state.reviews.reviews);
+  const { filter } = useFilter();
+  const { sort } = useSort();
+
+  const sorted = sort( filter(reviews) );
 
   return (
     <Stack
@@ -13,9 +17,9 @@ const CardList = () => {
       spacing={2}
     >
       {
-        (reviews.length)
+        (sorted.length)
         ?
-        reviews.map(review => (
+        sorted.map(review => (
           <Card
             key={review.id}
             {...review}

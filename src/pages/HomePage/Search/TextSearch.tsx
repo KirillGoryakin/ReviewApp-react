@@ -1,22 +1,20 @@
 import { Button, Stack, TextField } from "@mui/material";
-import { useAppDispatch } from "hooks/app";
-import { useEffect, useState } from "react";
-import { setSearchText } from "store/slices/searchSlice";
+import { useFilter } from "hooks/useFilter";
+import { useState, useEffect } from "react";
 
 const TextSearch = () => {
-  const dispatch = useAppDispatch();
+  const { filterParams, setFilterParams } = useFilter();
   const [value, setValue] = useState('');
-
-  useEffect(() => {
-    dispatch(setSearchText(value));
-  }, [value]);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const target = event.target as typeof event.target & {text: {value: string}};
-    setValue(target.text.value);
+    setFilterParams(params => ({ ...params, s: value }));
   }
 
+  useEffect(() => {
+    setValue(filterParams.s);
+  }, []);
+  
   return (
     <Stack 
       component='form'
@@ -29,7 +27,10 @@ const TextSearch = () => {
         name='text'
         label='Search...'
         size='small'
+        onFocus={(e) => e.target.select()}
         sx={{ flexGrow: 16 }}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
       />
       <Button
         variant="contained"

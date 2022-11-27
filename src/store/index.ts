@@ -1,6 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import reviewsReducer from './slices/reviewsSlice';
-import searchReducer from './slices/searchSlice';
 import {
   persistStore,
   persistReducer,
@@ -14,8 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 const rootReducer = combineReducers({
-  reviews: reviewsReducer,
-  search: searchReducer
+  reviews: reviewsReducer
 });
 
 const persistConfig = {

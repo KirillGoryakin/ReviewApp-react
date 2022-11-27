@@ -1,25 +1,31 @@
 import { Button, Menu, MenuItem } from "@mui/material";
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
-import { useRef, useState } from "react";
-import { useAppDispatch } from "hooks/app";
-import { setSearchFolder } from "store/slices/searchSlice";
+import { useEffect, useRef, useState } from "react";
 import { useFolders } from "hooks/useFolders";
+import { useFilter } from "hooks/useFilter";
 
 const FolderSelectorSearch = () => {
-  const dispatch = useAppDispatch();
+  const { filterParams, setFilterParams } = useFilter();
   const folders = useFolders();
-  const [open, setOpen] = useState(false);
   const [selectedFolder, setFolder] = useState('');
 
+  const [open, setOpen] = useState(false);
   const buttonRef = useRef(null);
+
   const ITEM_HEIGHT = 36;
 
   const handleSelect = (folder: string) => {
     setOpen(false);
     setFolder(folder);
-
-    dispatch(setSearchFolder(folder));
+    setFilterParams(params => ({ ...params, folder }));
   }
+
+  useEffect(() => {
+    if (filterParams.folder !== 'All')
+      setFolder(filterParams.folder);
+    else
+      setFolder('');
+  }, [filterParams]);
 
   return (
     <>
