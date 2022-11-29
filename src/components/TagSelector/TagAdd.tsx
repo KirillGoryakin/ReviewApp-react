@@ -78,7 +78,7 @@ const TagAdd: React.FC<Props> = ({ context }) => {
           }}
         >
           {
-            (includedTags.length < tags.length)
+            (!tags.every(value => includedTags.includes(value)))
               ? tags.map(tag =>
                 (!includedTags.includes(tag))
                 &&

@@ -60,7 +60,7 @@ const TagSearch = () => {
           }}
         >
           {
-            (searchTags.length < tags.length)
+            (!tags.every(value => searchTags.includes(value)))
               ? tags.map(tag =>
                 (!searchTags.includes(tag))
                 &&

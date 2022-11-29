@@ -64,5 +64,23 @@
 
   "notFoundPage.404": "404",
   "notFoundPage.text": "Page not found",
-  "notFoundPage.buttonHome": "Home Page"
+  "notFoundPage.buttonHome": "Home Page",
+
+  "about.title": "Review App",
+  "about.author": "Author:",
+  "about.repository": "GitHub repository",
+  "about.text": "This is a React project that can store your movies or series Reviews. Basically, this is just like a playlist or a notepad for movies and series. Each Review contains: title, description, date, score, image, folder and tags. All the Reviews store in <b>localStorage</b>. They can be edited and deleted easily.",
+
+  "about.keyFeatures.title": "Key features of this project:",
+  "about.keyFeatures.item1": "Searching, filtering and sorting",
+  "about.keyFeatures.item2": "Tag and folder system",
+  "about.keyFeatures.item3": "Translation support",
+  "about.keyFeatures.item4": "Searching images by title",
+
+  "about.technologies.title": "Technologies used:",
+  "about.technologies.item1": "React JS",
+  "about.technologies.item2": "Typescript",
+  "about.technologies.item3": "Redux ToolKit",
+  "about.technologies.item4": "Redux Persist",
+  "about.technologies.item5": "Material UI"
 }

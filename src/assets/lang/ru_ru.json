@@ -65,5 +65,23 @@
 
   "notFoundPage.404": "404",
   "notFoundPage.text": "Страница не найдена",
-  "notFoundPage.buttonHome": "На Главную"
+  "notFoundPage.buttonHome": "На Главную",
+
+  "about.title": "Review App",
+  "about.author": "Автор:",
+  "about.repository": "GitHub репозиторий",
+  "about.text": "Это React проект, который может хранить ваши Рецензии на фильмы или сериалы. В общем, это как плейлист или записная книжка для фильмов или сериалов. Каждая рецензия содержит: название, описание, дату, оценку, картинку, папку и теги. Все рецензии хранятся в <b>localStorage</b>. Они легко могут быть изменены или удалены.",
+
+  "about.keyFeatures.title": "Главные особенности проекта:",
+  "about.keyFeatures.item1": "Поиск, фильтрация и сортировка",
+  "about.keyFeatures.item2": "Система тегов и папок",
+  "about.keyFeatures.item3": "Поддержка перевода",
+  "about.keyFeatures.item4": "Поиск картинок по названию",
+
+  "about.technologies.title": "Использованные технологии:",
+  "about.technologies.item1": "React JS",
+  "about.technologies.item2": "Typescript",
+  "about.technologies.item3": "Redux ToolKit",
+  "about.technologies.item4": "Redux Persist",
+  "about.technologies.item5": "Material UI"
 }
