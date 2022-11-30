@@ -91,14 +91,11 @@ const SearchByTitle: React.FC<Props> = ({ title, open, onClose }) => {
         display='flex'
         justifyContent='space-between'
         alignItems='center'
+        flexDirection={{ xs: 'column', sm: 'row' }}
+        textAlign={{ xs: 'center', sm: 'left' }}
       >
         {__("imageSelector.searchByTitle.title")}
-        <img
-          src={SearchedByTitleImage}
-          style={{
-            marginLeft: 'auto'
-          }}
-        />
+        <img src={SearchedByTitleImage} />
       </DialogTitle>
       <DialogContent sx={{
         flex: '0 0 auto',
@@ -107,7 +104,7 @@ const SearchByTitle: React.FC<Props> = ({ title, open, onClose }) => {
       }}>
         <Stack
           component='form'
-          direction='row'
+          direction={{ xs: 'column', sm: 'row' }}
           spacing={1}
           mb={2}
           onSubmit={handleSubmit}
@@ -133,6 +130,7 @@ const SearchByTitle: React.FC<Props> = ({ title, open, onClose }) => {
         <Box
           display='flex'
           flexWrap='wrap'
+          justifyContent='center'
           gap={1}
         >
           {images.map(({ link }) =>

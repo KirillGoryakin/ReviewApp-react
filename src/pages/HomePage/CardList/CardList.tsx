@@ -18,6 +18,9 @@ const CardList = () => {
     <Stack
       component='ul'
       spacing={2}
+      pb={8}
+      mx='auto'
+      maxWidth={{ xs: 300, sm: 'unset' }}
     >
       {
         (sorted.length)

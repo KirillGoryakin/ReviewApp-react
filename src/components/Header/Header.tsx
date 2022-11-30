@@ -7,6 +7,7 @@ import { PageItems } from "./PageItems";
 import { Logo } from "./Logo";
 import { AddButton } from "./AddButton";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { MobileMenu } from "./MobileMenu";
 
 const Header = () => {
   return (
@@ -16,11 +17,13 @@ const Header = () => {
 
           <Logo />
 
-          <PageItems />
-          
+          <PageItems display={{ xs: 'none', md: 'flex' }} />
+
           <AddButton />
 
-          <LanguageSwitcher />
+          <LanguageSwitcher display={{ xs: 'none', md: 'inline-flex' }} />
+
+          <MobileMenu />
 
         </Toolbar>
       </Container>

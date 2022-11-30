@@ -37,16 +37,31 @@ const Card: React.FC<Props> = (props) => {
       
       <MoreButton id={id} />
 
-      <Accordion sx={{width: '100%', boxShadow: 'none'}}>
-        <AccordionSummary sx={{position: 'relative'}}>
+      <Accordion
+        sx={{
+          width: '100%',
+          boxShadow: 'none',
+          pt: { xs: 4, sm: 0 }
+        }}
+      >
+        <AccordionSummary
+          
+          sx={{
+            position: 'relative',
+            "& > .MuiAccordionSummary-content": {
+              flexDirection: { xs: 'column', sm: 'row' },
+              alignItems: { xs: 'center', sm: 'start' },
+            },
+          }}
+        >
 
           <Score score={score} />
 
           <Box
             border='2px solid #ebebeb'
             borderRadius='5px'
-            width={150}
-            height={170}
+            width={{ xs: 275, sm: 150 }}
+            height={{ xs: 312, sm: 170 }}
             flexGrow={0}
           >
             <img
@@ -54,12 +69,19 @@ const Card: React.FC<Props> = (props) => {
               src={imageUrl}
             />
           </Box>
-          <Box sx={{ flexGrow: 1, ml: 2 }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              ml: 2,
+              minWidth: { xs: 275, sm: 'unset' }
+            }}
+          >
 
             <Typography
               variant="h5"
               fontWeight={500}
               mb={1}
+              mt={{xs: 1, sm: 0}}
             >
               {title}
             </Typography>
@@ -80,6 +102,9 @@ const Card: React.FC<Props> = (props) => {
               fontSize='1.25rem'
               fontWeight={500}
               color='text.secondary'
+              sx={{
+                maxWidth: { xs: 190, sm: 'unset' }
+              }}
             >
               {folder}
             </Typography>

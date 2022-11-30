@@ -23,7 +23,7 @@
 
   "addReviewPage.title": "Title",
   "addReviewPage.description": "Description",
-  "addReviewPage.button": "Add Review",
+  "addReviewPage.button": "Add",
 
   "editReviewPage.button": "Confirm",
 
@@ -76,6 +76,7 @@
   "about.keyFeatures.item2": "Tag and folder system",
   "about.keyFeatures.item3": "Translation support",
   "about.keyFeatures.item4": "Searching images by title",
+  "about.keyFeatures.item5": "Responsive design",
 
   "about.technologies.title": "Technologies used:",
   "about.technologies.item1": "React JS",

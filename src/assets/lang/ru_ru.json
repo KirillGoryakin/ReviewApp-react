@@ -24,7 +24,7 @@
 
   "addReviewPage.title": "Название",
   "addReviewPage.description": "Описание",
-  "addReviewPage.button": "Добавить рецензию",
+  "addReviewPage.button": "Добавить",
 
   "editReviewPage.button": "Подтвердить",
 
@@ -77,6 +77,7 @@
   "about.keyFeatures.item2": "Система тегов и папок",
   "about.keyFeatures.item3": "Поддержка перевода",
   "about.keyFeatures.item4": "Поиск картинок по названию",
+  "about.keyFeatures.item5": "Адаптивный дизайн",
 
   "about.technologies.title": "Использованные технологии:",
   "about.technologies.item1": "React JS",

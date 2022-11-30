@@ -38,7 +38,10 @@ const ReviewFormLayout: React.FC<any> = ({
       />
 
       <ReviewContext.Provider value={[review, setReview]}>
-        <Stack direction='row' spacing={2}>
+        <Stack
+          direction={{ xs: 'column-reverse', sm: 'row' }}
+          spacing={2}
+        >
           <Box
             display='flex'
             flexDirection='column'

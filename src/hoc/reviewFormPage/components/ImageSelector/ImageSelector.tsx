@@ -27,6 +27,7 @@ const ImageSelector = () => {
         flexDirection='column'
         alignItems='center'
         justifyContent='center'
+        mx={{ xs: 'auto', sm: 0 }}
         sx={{
           cursor: 'pointer',
           ":hover": {

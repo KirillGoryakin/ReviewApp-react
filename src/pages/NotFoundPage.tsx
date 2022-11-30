@@ -15,7 +15,7 @@ const NotFoundPage = () => {
         {__("notFoundPage.404")}
       </Typography>
       <Typography
-        fontSize='4rem'
+        fontSize={{ xs: '3rem', sm: '4rem' }}
         fontWeight={700}
         color='text.secondary'
       >

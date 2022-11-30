@@ -20,7 +20,7 @@ const TextSearch = () => {
   return (
     <Stack 
       component='form'
-      direction='row'
+      direction={{ xs: 'column' , sm: 'row'}}
       spacing={1}
       mb={2}
       onSubmit={handleSubmit}
