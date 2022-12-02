@@ -40,7 +40,7 @@ const FolderSelectorAdd: React.FC<Props> = ({ context }) => {
   }, [selectedFolder]);
 
   return (
-    <>
+    <div className="folderSelector folderSelector-add">
       <Button
         ref={buttonRef}
         onClick={() => setOpen(true)}
@@ -81,7 +81,7 @@ const FolderSelectorAdd: React.FC<Props> = ({ context }) => {
           </MenuItem>
         )}
       </Menu>
-    </>
+    </div>
   )
 }
 

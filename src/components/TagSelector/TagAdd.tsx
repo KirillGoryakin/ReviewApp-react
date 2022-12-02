@@ -39,6 +39,7 @@ const TagAdd: React.FC<Props> = ({ context }) => {
   return (
     <>
       <Button
+        className="tagSelector-add"
         ref={buttonRef}
         onClick={() => setOpen(true)}
         variant="outlined"

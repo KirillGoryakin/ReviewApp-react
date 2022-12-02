@@ -10,6 +10,7 @@ type Props = {
 const TagDeletableAdd: React.FC<Props> = ({ tag, onClick }) => {
   return (
     <Box
+      data-tagDeletable={tag}
       display='flex'
       onClick={() => onClick(tag)}
       border='2px solid rgb(46, 125, 50)'

@@ -18,6 +18,7 @@ const ClearFilters = () => {
 
   return (
     <Button
+      className="homePage-clearFilters"
       endIcon={<FilterAltOffIcon />}
       onClick={handleClick}
     >

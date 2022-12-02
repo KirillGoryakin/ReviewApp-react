@@ -1,5 +1,4 @@
 import { Folder, Review, Tag } from "appTypes";
-import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 interface FilterParams {

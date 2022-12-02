@@ -14,6 +14,7 @@ const TagBageSearch: React.FC<Props> = ({tag}) => {
 
   return (
     <Box
+      data-tagBage={tag}
       onClick={handleClick}
       border='2px solid rgb(46, 125, 50)'
       borderRadius={1}

@@ -20,7 +20,7 @@ const Sorting = () => {
   }, [sortMode]);
 
   return (
-    <FormControl>
+    <FormControl className="homePage-sort">
       <InputLabel id="sort-by-select-label">{selectLabel}</InputLabel>
       <Select
         label={selectLabel}

@@ -16,6 +16,7 @@ const CardList = () => {
 
   return (
     <Stack
+      className="homePage-cardList"
       component='ul'
       spacing={2}
       pb={8}

@@ -17,6 +17,7 @@ const NewUserDialog = () => {
 
   return (
     <Dialog
+      className="new-user-dialog"
       open={isNewUser}
       maxWidth='xs'
     >
@@ -28,6 +29,7 @@ const NewUserDialog = () => {
       </DialogContent>
       <DialogActions>
         <Button
+          className="add-button"
           onClick={() => dispatch(newUserDialog(true))}
           variant='contained'
           color='success'
@@ -35,6 +37,7 @@ const NewUserDialog = () => {
           {__("homePage.newUserDialog.button.add")}
         </Button>
         <Button
+          className="no-button"
           onClick={() => dispatch(newUserDialog(false))}
           variant='text'
         >

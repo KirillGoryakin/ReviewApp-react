@@ -7,7 +7,10 @@ import { ClearFilters } from "./ClearFilters";
 
 const Search = () => {
   return (
-    <Box sx={{mb: 2}}>
+    <Box
+      className="homePage-search"
+      sx={{mb: 2}}
+    >
 
       <TextSearch />
 

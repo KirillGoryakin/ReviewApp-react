@@ -60,6 +60,7 @@ const MoreButton = ({ id }: {id: number}) => {
         <MenuItem
           disableRipple
           onClick={() => navigate(`/edit/${id}`)}
+          data-moreButton='edit'
         >
           <EditIcon />
           {__("homePage.moreButton.menu.edit")}
@@ -68,6 +69,7 @@ const MoreButton = ({ id }: {id: number}) => {
           ref={folderRef}
           disableRipple
           onClick={() => setFolderOpen(true)}
+          data-moreButton='moveToFolder'
         >
           <DriveFileMoveIcon />
           {__("homePage.moreButton.menu.moveToFolder")}
@@ -75,6 +77,7 @@ const MoreButton = ({ id }: {id: number}) => {
         <MenuItem
           disableRipple
           onClick={() => setConfirmDeleteOpen(true)}
+          data-moreButton='delete'
         >
           <DeleteIcon />
           {__("homePage.moreButton.menu.delete")}

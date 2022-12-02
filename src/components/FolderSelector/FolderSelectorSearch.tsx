@@ -31,7 +31,7 @@ const FolderSelectorSearch = () => {
   }, [filterParams]);
 
   return (
-    <>
+    <div className="folderSelector folderSelector-search">
       <Button
         ref={buttonRef}
         onClick={() => setOpen(true)}
@@ -67,12 +67,13 @@ const FolderSelectorSearch = () => {
           <MenuItem
             key={folder}
             onClick={() => handleSelect(folder)}
+            data-folderSelectorItem={folder}
           >
             {folder}
           </MenuItem>
         )}
       </Menu>
-    </>
+    </div>
   )
 }
 

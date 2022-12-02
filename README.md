@@ -18,6 +18,8 @@ All the Reviews store in **localStorage**. They can be edited and deleted easily
 - Redux ToolKit
 - Redux Persist
 - Material UI
+- Jest
+- Cypress
 
 # Live demo
 https://review-app-react.vercel.app/
@@ -36,7 +38,12 @@ npm i
 ```
 npm run start
 ```
-### Tests:
+### Testing:
+Unit and Integration Tests:
 ```
 npm run test
+```
+E2E Tests:
+```
+npm run test:cypress
 ```

@@ -22,6 +22,7 @@ const ConfirmDelete: React.FC<Props> = ({ open, onClose, confirm }) => {
       open={open}
       onClose={onClose}
       maxWidth='xs'
+      className='confirmDelete'
     >
       <DialogTitle>{__("homePage.confirmDelete.title")}</DialogTitle>
       <DialogContent>
@@ -35,12 +36,14 @@ const ConfirmDelete: React.FC<Props> = ({ open, onClose, confirm }) => {
           variant='outlined'
           color='error'
           autoFocus
+          role='delete'
         >
           {__("homePage.confirmDelete.buttonDelete")}
         </Button>
         <Button
           onClick={onClose}
           variant='outlined'
+          role='cancel'
         >
           {__("homePage.confirmDelete.buttonCancel")}
         </Button>

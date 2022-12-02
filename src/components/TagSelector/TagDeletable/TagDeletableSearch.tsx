@@ -16,6 +16,7 @@ const TagDeletableSearch: React.FC<Props> = ({tag}) => {
 
   return (
     <Box
+      data-tagDeletable={tag}
       display='flex'
       onClick={handleClick}
       border='2px solid rgb(46, 125, 50)'

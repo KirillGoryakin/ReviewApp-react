@@ -21,6 +21,7 @@ const TagSearch = () => {
   return (
     <>
       <Button
+        className="tagSelector-search"
         ref={buttonRef}
         onClick={() => setOpen(true)}
         variant="outlined"
