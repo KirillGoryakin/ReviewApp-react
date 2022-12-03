@@ -17,6 +17,7 @@ All the Reviews store in **localStorage**. They can be edited and deleted easily
 - Typescript
 - Redux ToolKit
 - Redux Persist
+- Rest API
 - Material UI
 - Jest
 - Cypress
@@ -39,11 +40,16 @@ npm i
 npm run start
 ```
 ### Testing:
-Unit and Integration Tests:
+#### Unit and Integration Tests
 ```
 npm run test
 ```
-E2E Tests:
+#### E2E Tests
+Start server and run tests:
 ```
 npm run test:cypress
+```
+If the server is already running:
+```
+cypress open
 ```
